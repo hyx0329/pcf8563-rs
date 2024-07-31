@@ -1,4 +1,5 @@
 use crate::{Pcf8563, Error, I2c};
+use bit_field::BitField;
 
 impl<I2C: I2c> Pcf8563<I2C> {
     pub fn timer_interrupt_enabled(&mut self) -> Result<bool, Error> {

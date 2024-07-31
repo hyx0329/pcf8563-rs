@@ -199,5 +199,11 @@ mod test {
         assert_eq!(2, value);
         let value: u8 = WeekDay::Sunday.to_iso_weekday();
         assert_eq!(7, value);
+
+        let day = WeekDay::from_primitive(7);
+        assert_eq!(day, WeekDay::Sunday);
+
+        let day = WeekDay::from_primitive(1);
+        assert_eq!(day, WeekDay::Monday);
     }
 }

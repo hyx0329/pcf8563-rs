@@ -11,6 +11,7 @@ mod datetime;
 mod utils;
 mod timer;
 mod alarm;
+mod irq;
 
 const PCF8563_ADDR: u8 = 0x51;
 
