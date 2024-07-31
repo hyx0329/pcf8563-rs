@@ -44,7 +44,7 @@ pub struct Pcf8563<I2C> {
 
 #[allow(dead_code)]
 impl<I2C: I2c> Pcf8563<I2C> {
-    pub fn new(&mut self, i2c: I2C) -> Self {
+    pub fn new(i2c: I2C) -> Self {
         Self {
             i2c
         }
