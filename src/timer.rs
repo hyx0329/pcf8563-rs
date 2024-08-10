@@ -10,7 +10,7 @@ pub enum TimerClockFrequency {
     Freq1Hz,
     /// 1/60 Hz
     #[num_enum(default)]
-    Freq1o60Hz
+    Freq1d60Hz
 }
 
 impl<I2C: I2c> Pcf8563<I2C> {

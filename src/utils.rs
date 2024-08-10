@@ -5,7 +5,7 @@
 /// Only supports u8
 #[inline]
 pub fn u8_bcd_encode(value: u8) -> u8 {
-    value % 10 + (value / 10 << 4)
+    value % 10 + ((value / 10) << 4)
 }
 
 /// Convert Binary Coded Decimal value to original value.

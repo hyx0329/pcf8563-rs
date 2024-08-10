@@ -21,9 +21,9 @@ pub struct DateTime {
     pub weekday: WeekDay,
 }
 
-impl DateTime {
-    pub fn new() -> Self {
-        DateTime {
+impl Default for DateTime {
+    fn default() -> Self {
+        Self {
             second: 0,
             minute: 0,
             hour: 0,
@@ -32,6 +32,12 @@ impl DateTime {
             year: 2000,
             weekday: WeekDay::Saturday,
         }
+    }
+}
+
+impl DateTime {
+    pub fn new() -> Self {
+        Default::default()
     }
 
     #[must_use]
@@ -60,7 +66,7 @@ impl DateTime {
 
     #[must_use]
     pub fn day(mut self, value: u8) -> Self {
-        if value >= 1 && value <= 31 {
+        if (1..=31).contains(&value) {
             self.day = value;
         }
         self
@@ -74,7 +80,7 @@ impl DateTime {
 
     #[must_use]
     pub fn month(mut self, value: u8) -> Self {
-        if value >= 1 && value <= 12 {
+        if (1..=12).contains(&value) {
             self.month = value;
         }
         self
@@ -82,7 +88,7 @@ impl DateTime {
 
     #[must_use]
     pub fn year(mut self, value: u16) -> Self {
-        if value >= 1900 && value <= 2099 {
+        if (1900..=2099).contains(&value) {
             self.year = value;
         }
         self
